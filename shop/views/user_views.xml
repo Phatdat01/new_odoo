@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_shop_user_tree">
+        <field name="name">shop.user.tree</field>
+        <field name="model">shop.user</field>
+        <field name="arch" type="xml">
+            <tree string="Users">
+                <field name="name"/>
+                <field name="dob"/>
+                <field name="gender" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_shop_user_form">
+        <field name="name">shop.user.form</field>
+        <field name="model">shop.user</field>
+        <field name="arch" type="xml">
+            <form string="Users">
+                <sheet>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="dob"/>
+                    </group>
+                    <group>
+                        <field name="gender"/>
+                    </group>
+                </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_shop_user" model="ir.actions.act_window">
+        <field name="name">Users</field>
+        <field name="res_model">shop.user</field>
+
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_ids" eval="[Command.clear(),
+            (0,0,{'view_mode':'tree','view_id': ref('view_shop_user_tree')}),
+            (0,0,{'view_mode':'form','view_id': ref('view_shop_user_form')})]"/>
+        <field name="help" type="html">
+            <p class="o_view_user">
+                Create new user
+            </p>
+        </field>
+    </record>
+</odoo>
