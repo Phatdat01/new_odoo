@@ -13,6 +13,9 @@ class ShopAppointment(models.Model):
     state = fields.Selection([("draft","Draft"),("confirmed","Confirmed"),
         ("ongoing","Ongoging"),("done","Done"),("cancel","Cancel"),                        
     ], default="draft", tracking=True)
+    appointment_line_ids = fields.One2many(
+        "shop.appointment.line","appointment_id",string="Lines"
+    )
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -37,3 +40,11 @@ class ShopAppointment(models.Model):
     def action_cancel(self):
         for rec in self:
             rec.state = 'cancel'
+
+class ShopAppointmentLines(models.Model):
+    _name="shop.appointment.line"
+    _description="User appointment Lines"
+
+    appointment_id = fields.Many2one("shop.appointment", string="Appointment")
+    product_id = fields.Many2one("product.product", string="Product")
+    qty = fields.Float(string="Quantity")

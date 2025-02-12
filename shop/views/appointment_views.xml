@@ -26,16 +26,30 @@
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,ongoing,done"/>
                 </header>
                 <sheet>
-                <group>
-                    <group> 
-                        <field name="reference" readonly="True"/>
-                        <field name="user_id"/>
-                        <field name="date_appointment"/>
-                    </group>
                     <group>
-                        <field name="note"/>
+                        <group> 
+                            <field name="reference" readonly="True"/>
+                            <field name="user_id"/>
+                            <field name="date_appointment"/>
+                        </group>
+                        <group>
+                            <field name="note"/>
+                        </group>
                     </group>
-                </group>
+                    <field name="appointment_line_ids">
+                        <tree>
+                            <field name="product_id"/>
+                            <field name="qty"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group>
+                                    <field name="product_id"/>
+                                    <field name="qty"/>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" groups="base.group_user"/>
