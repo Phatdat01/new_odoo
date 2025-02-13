@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_shop_tag_tree">
+        <field name="name">shop.tag.tree</field>
+        <field name="model">shop.tag</field>
+        <field name="arch" type="xml">
+            <tree string="Shop Tag" editable="top">
+                <field name="sequence" widget="handle"/>
+                <field name="sequence"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_user_tag" model="ir.actions.act_window">
+        <field name="name">Shop Tag</field>
+        <field name="res_model">shop.tag</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="o_view_user">
+                Create new Tag
+            </p>
+        </field>
+    </record>
+</odoo>

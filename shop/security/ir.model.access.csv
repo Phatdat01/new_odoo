@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_shop_user,access.shop.user,model_shop_user,base.group_user,1,1,1,1
+access_shop_appointment,access.shop.appointment,model_shop_appointment,base.group_user,1,1,1,1
+access_shop_appointment_line,access.shop.appointment_line,model_shop_appointment_line,base.group_user,1,1,1,1
+access_shop_tag,access.shop.tag,model_shop_tag,base.group_user,1,1,1,1

@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="menu_shop_root" name="SM"/>
+    <menuitem id="menu_shop_root" 
+        name="SM"
+        web_icon="shop,static/description/icon.png"
+        sequence="35"/>
 
     <menuitem id="menu_frontdesk" name="Front Desk" parent="menu_shop_root"/>
 
     <menuitem id="menu_user" name="User" parent="menu_frontdesk" action="action_shop_user"/>
 
     <menuitem id="menu_user_readonly" name="View User" parent="menu_frontdesk" action="action_shop_readonly_user"/>
+
+    <menuitem id="menu_appointment" name="Appointment" parent="menu_frontdesk" action="action_shop_appointment"/>
+
+    <menuitem id="menu_appointment_line" name="Appointment Line" parent="menu_frontdesk" action="action_shop_appointment_line"/>
+
+    <menuitem id="menu_configuration" name="Configuration" parent="menu_shop_root"/>
+
+    <menuitem id="menu_shop_tag" name="Tags" parent="menu_configuration" action="action_user_tag"/>
 </odoo>
