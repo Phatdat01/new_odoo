@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.ui.view" id="view_shop_user_tree">
+    <record model="ir.ui.view" id="view_shop_appointment_tree">
         <field name="name">shop.appointment.tree</field>
         <field name="model">shop.appointment</field>
         <field name="arch" type="xml">
@@ -13,7 +13,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_shop_user_form">
+    <record model="ir.ui.view" id="view_shop_appointment_form">
         <field name="name">shop.appointment.form</field>
         <field name="model">shop.appointment</field>
         <field name="arch" type="xml">
