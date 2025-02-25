@@ -18,4 +18,10 @@
     <menuitem id="menu_configuration" name="Configuration" parent="menu_shop_root"/>
 
     <menuitem id="menu_shop_tag" name="Tags" parent="menu_configuration" action="action_user_tag"/>
+
+    <menuitem id="menu_billing" name="Bill" parent="menu_shop_root"/>
+
+    <menuitem id="menu_has_invoicing" name="Invoice" parent="menu_billing" action="account.action_move_out_invoice_type"/>
+
+    <menuitem id="menu_has_payment" name="Payment" parent="menu_billing" action="account.action_account_payments"/>
 </odoo>
