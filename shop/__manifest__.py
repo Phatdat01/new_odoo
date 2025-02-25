@@ -5,7 +5,8 @@
     "version":"17.0.1.1",
     "depends": [
         "mail",
-        "product"
+        "product",
+        "account"
     ],
     "data": [
         "security/ir.model.access.csv",
@@ -15,6 +16,7 @@
         "views/appointment_views.xml",
         "views/appointment_line_views.xml",
         "views/tag_views.xml",
+        "views/account_move_view.xml",
         "views/menu.xml"
     ]
 }
