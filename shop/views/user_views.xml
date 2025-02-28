@@ -38,6 +38,20 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="view_shop_user_search">
+        <field name="name">shop.user.search</field>
+        <field name="model">shop.user</field>
+        <field name="arch" type="xml">
+            <search string="Users">
+                <field name="name"/>
+                <field name="dob"/>
+                <field name="gender"/>
+                <filter string="Male" name="male_user" domain="[('gender','=','male')]"/>
+                <filter string="Female" name="female_user" domain="[('gender','=','female')]"/>
+            </search>
+        </field>
+    </record>
+
     <record id="action_shop_user" model="ir.actions.act_window">
         <field name="name">Users</field>
         <field name="res_model">shop.user</field>

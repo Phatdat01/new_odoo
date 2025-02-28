@@ -70,6 +70,27 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="view_shop_appointment_search">
+        <field name="name">shop.appointment.search</field>
+        <field name="model">shop.appointment</field>
+        <field name="arch" type="xml">
+            <search string="Appointments">
+                <field name="reference"
+                    filter_domain="['|', ('reference','ilike',self),('user_id','ilike','self')]"
+                    string="Joined Filter"
+                />
+                <field name="reference"/>
+                <field name="user_id"/>
+                <group expand='1' string="Group By">
+                    <filter name="group_by_user" string="User" context="{'group_by':'user_id'}"/>
+                </group>
+                <searchpanel>
+                    <field name="user_id" string="USer" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
     <record id="action_shop_appointment" model="ir.actions.act_window">
         <field name="name">Appointment</field>
         <field name="res_model">shop.appointment</field>
